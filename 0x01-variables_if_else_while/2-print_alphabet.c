@@ -1,14 +1,12 @@
-nclude <stdio.h>
-
-#include <ctype.h>
+#include <stdio.h>
 
 
 
 /**
  *
- *  * main - program that prints the alphabet in lowercase, followed by a new line
+ *  * main - program that prints all single digit numbers of base 10 starting from
  *
- *   * You can only use the putchar
+ *   * All your code should be in the main function
  *
  *    * Return: 0
  *
@@ -20,19 +18,19 @@ int main(void)
 
 {
 
-	int l = 'a';
+	int n;
 
-	while (l <= 'z')
+	while (n < 10)
 
 	{
 
-		putchar(l);
+		printf("%d", n);
 
-		l += 1;
+		n += 1;
 
 	}
 
-	putchar('\n');
+	printf("\n");
 
 	return (0);
 
