@@ -7,23 +7,16 @@
 
 
 /**
+ * main - assign a random number to the variable n each time it is executed
  *
- *  * main - assign a random number to the variable n each time it is executed
+ * The string Last digit of n
  *
- *   * The string Last digit of n
+ * Return: 0
  *
- *    * Return: 0
- *
- *     */
-
-
-
+ */
 int main(void)
-
 {
-
 	int n;
-
 	int lastn;
 
 
