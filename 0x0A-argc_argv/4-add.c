@@ -1,49 +1,61 @@
 #include <stdio.h>
-	#include <stdlib.h>
-	#include <ctype.h>
-	#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+
 /**
- * main - Prints coints left
- * @args: Paramater Entry
- * @argv: One number of argumets
- * Return: zero onOne number of argumetsr
+ * check_num - check - string there are digit
+ * @str: array str
+ *
+ * Return: Always 0 (Success)
  */
-
-int main(int args, char *argv[])
+int check_num(char *str)
 {
-	int  c, coins = 0;
+	/*Declaring variables*/
+	unsigned int count;
 
-	if (args != 2)
+	count = 0;
+	while (count < strlen(str)) /*count string*/
 	{
-		printf("Error\n");
-		return (1);
+		if (!isdigit(str[count])) /*check if str there are digit*/
+		{
+			return (0);
+		}
+		count++;
 	}
-	c = atoi(argv[1]);
-	if (c < 0)
+	return (1);
+}
+
+/**
+ * main - Print the name of the program
+ * @argc: Count arguments
+ * @argv: Arguments
+ *
+ * Return: Always 0 (Success)
+ */
+int main(int argc, char *argv[])
+{
+	/*Declaring variables*/
+	int count;
+	int str_to_int;
+	int sum = 0;
+
+	count = 1;
+	while (count < argc) /*Goes through the whole array*/
 	{
-		printf("0\n");
-		return (0);
-	}
-	for (; c >= 0;)
-	{
-		if (c >= 25)
-			c -= 25;
-
-		else if (c >= 10)
-			c -= 10;
-
-		else if (c >= 5)
-			c -= 5;
-
-		else if (c >= 2)
-			c -= 2;
-
-		else if (c >= 1)
-			c -= 1;
+		if (check_num(argv[count]))
+		{
+			str_to_int = atoi(argv[count]); /*ATOI --> convert string to int*/
+			sum += str_to_int;
+		}
+		/*Condition if one of the number contains symbols that are not digits*/
 		else
-			break;
-		coins += 1;
+		{
+			printf("Error\n");
+			return (1);
+		}
+		count++;
 	}
-	printf("%d\n", coins);
+	printf("%d\n", sum); /*print sum*/
 	return (0);
 }
