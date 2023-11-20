@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> bb2d301322a640b9e0ccff914124d6718b4af6fb
 #include <stdio.h>
 		
 #include "main.h"
@@ -24,4 +28,8 @@ int _putchar(char c)
 		
 return (write(1, &c, 1));
 		
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> bb2d301322a640b9e0ccff914124d6718b4af6fb
