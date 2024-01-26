@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int is_palindrome(int n) {
+    int rev = 0;
+    int org = n;
+
+    while (n != 0) {
+        int digit = n % 10;
+        rev = rev * 10 + digit;
+        n /= 10;
+    }
+
+    return org == rev;
+}
+
+int main() {
+    int max_palindrome = 0;
+
+    for (int i = 999; i >= 100; i--) {
+        for (int j = i; j >= 100; j--) {
+            int prod = i * j;
+            if (prod <= max_palindrome) {
+                break;
+            }
+            if (is_palindrome(prod)) {
+                max_palindrome = prod;
+            }
+        }
+    }
+
+    FILE *file = fopen("102-result", "w");
+    fprintf(file, "%d", max_palindrome);
+    fclose(file);
+
+    return 0;
+}
